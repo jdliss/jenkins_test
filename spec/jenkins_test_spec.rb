@@ -20,5 +20,10 @@ RSpec.describe JenkinsTest do
       msg =  "(╯°□°）╯︵ ┻━┻ : can't modify frozen Array"
       expect { test.runtime_error }.to raise_error(RuntimeError, msg)
     end
+
+    it "works with CustomError" do
+      msg =  "(╯°□°）╯︵ ┻━┻ : This is a custom error"
+      expect { test.custom_error }.to raise_error(CustomError, msg)
+    end
   end
 end

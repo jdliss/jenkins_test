@@ -1,5 +1,7 @@
 require 'table_flipper'
 
+CustomError = Class.new(Exception)
+
 class JenkinsTest
 
   # get rid of annoying object id's in error messages
@@ -17,5 +19,9 @@ class JenkinsTest
 
   def runtime_error
     [1, 2, 3].freeze << 4
+  end
+
+  def custom_error
+    raise(CustomError, "This is a custom error")
   end
 end
