@@ -22,7 +22,7 @@ RSpec.describe JenkinsTest do
     end
 
     it "works with CustomError" do
-      msg =  "(╯°□°）╯︵ ┻━┻ : This is a custom error"
+      msg =  ""
       expect { test.custom_error }.to raise_error(CustomError, msg)
     end
   end
