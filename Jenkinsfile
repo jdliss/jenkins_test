@@ -1,12 +1,14 @@
 pipeline {
+    agent any
+
     stages {
-        stage("docker build") {
+        stage("Build") {
             steps {
                 sh "docker build . -t motologic/jenkins_test"
             }
         }
 
-        stage("docker run tests") {
+        stage("Test") {
             steps {
                 sh "docker run motologic/jenkins_test:latest bundle exec rspec"
             }
